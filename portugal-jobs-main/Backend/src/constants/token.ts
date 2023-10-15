@@ -1,0 +1,3 @@
+const TOKENSDIVIDER = ';';
+
+export { TOKENSDIVIDER };

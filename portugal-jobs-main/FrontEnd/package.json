@@ -1,0 +1,47 @@
+{
+  "name": "ptjobs",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo-google-fonts/inter": "^0.2.2",
+    "@expo-google-fonts/jost": "^0.2.2",
+    "@expo/vector-icons": "^13.0.0",
+    "@expo/webpack-config": "0.17.0",
+    "@react-native-async-storage/async-storage": "^1.17.11",
+    "@react-native-community/checkbox": "^0.5.14",
+    "@react-navigation/native": "^6.0.13",
+    "@react-navigation/native-stack": "^6.9.1",
+    "@react-navigation/stack": "^6.3.4",
+    "axios": "^1.2.0",
+    "expo": "~46.0.16",
+    "expo-app-loading": "~2.1.0",
+    "expo-document-picker": "~10.3.0",
+    "expo-font": "~10.2.0",
+    "expo-linear-gradient": "~11.4.0",
+    "expo-status-bar": "~1.4.0",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-native": "0.69.6",
+    "react-native-dropdown-select-list": "^2.0.4",
+    "react-native-gesture-handler": "~2.5.0",
+    "react-native-iphone-x-helper": "^1.3.1",
+    "react-native-safe-area-context": "4.3.1",
+    "react-native-screens": "~3.15.0",
+    "react-native-svg": "12.3.0",
+    "react-native-web": "~0.18.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@types/react": "~18.0.14",
+    "@types/react-native": "^0.71.0",
+    "react-native-svg-transformer": "^1.0.0",
+    "typescript": "~4.3.5"
+  },
+  "private": true
+}

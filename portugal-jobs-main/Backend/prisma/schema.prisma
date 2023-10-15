@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id           String         @id @unique
+  firstName    String
+  lastName     String
+  email        String         @unique
+  username     String         @unique
+  password     String
+  number       Int
+  curriculo    String?
+  isVerified   Boolean        @default(false)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  anuncios     Anuncios[]
+  candidaturas Candidaturas[]
+}
+
+model Anuncios {
+  id           String         @id @unique
+  ownerID      String
+  companyName  String
+  local        String
+  description  String         @db.VarChar(500)
+  salary       Float
+  isNegotiable Boolean
+  role         String
+  typeJob      String // Remoto, presencial ou híbrido
+  requirements String?        @db.VarChar(500)
+  contractType String
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  owner        Users          @relation(fields: [ownerID], references: [id])
+  candidaturas Candidaturas[]
+}
+
+model Candidaturas {
+  id        String   @id @unique
+  ownerID   String
+  anuncioID String
+  status    Int      @default(0) //0 - nenhuma atualização, 1 - aceito, 2 - recusado, 3 - Em analise
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  owner     Users    @relation(fields: [ownerID], references: [id])
+  anuncio   Anuncios @relation(fields: [anuncioID], references: [id])
+}

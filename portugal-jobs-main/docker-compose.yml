@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+  mysqlDB:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'superSecretPassword'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - ./my-db:/var/lib/mysql
+
+  redis:
+    image: redis:6.2-alpine
+    container_name: redis
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass superSecretPassword
+    volumes:
+      - redis:/data
+
+volumes:
+  redis:
+    driver: local
+  my-db:

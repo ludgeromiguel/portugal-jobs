@@ -1,0 +1,3 @@
+interface BcryptPluginOptions {
+  saltWorkFactor: number
+}

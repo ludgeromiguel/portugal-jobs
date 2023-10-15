@@ -1,0 +1,1 @@
+Na api agora existe uma rota para documentação, encontrada em `/api/docs`, a mesma é feita em swagger-ui, sendo assim possível enviar os requests e testar as rotas pelo mesmo site.
